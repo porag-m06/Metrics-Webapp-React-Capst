@@ -9,7 +9,6 @@
 # 📗 Table of Contents
 
 - [ The Metrics Webapp](#about-project)
-- [📗 Table of Contents]
 - [📖  The Metrics Webapp](#about-project)
   - [🛠 Built With React](#-built-with-)
     - [React Instructions ](#react-stack-)
