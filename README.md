@@ -4,21 +4,7 @@
 <div align="center">
   <img src="./porag-logo.png" alt="logo" width="140"  height="auto" />
   <br/>
-  <h3><b>The Metrics Webapp</b></h3>
-  <h5>The "Metrics Webapp" is a simple yet powerful, React and Redux capstone, single page mobile web application build around a list of metrics (numeric values) fetched from an external API with several pages. 
-  
-  The home page consists of a filterable list of items in which each item navigates to the item's details info grid.
-  
-  **Home page**
-  - When the page loads, the webapp shows the list of categories that could be filtered out by some parameter, for example by the category name.
-  - Along with the category name, displays numeric values per category that come from the API.
-  - When the user clicks (or taps) on a category item, the application navigates to the details page.
-
-**Details page**
-  - In the details page, the webapp retrieves data from the API to show detailed data in the category.
-  - When the user clicks on the "Back" button (<), the user navigates to the home page.<h5>
 </div>
-
 
 # 📗 Table of Contents
 
