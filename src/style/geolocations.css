@@ -27,6 +27,7 @@
 .hero-right p {
   margin: 0;
   padding: 0;
+  margin-left: 0.5rem;
 }
 
 .hero-right h2 {

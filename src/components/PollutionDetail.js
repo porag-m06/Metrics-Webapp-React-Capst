@@ -56,17 +56,17 @@ function PollutionDetail() {
         <ul>
           {list.map((item) => (
             <li className="index-list" key={1}>
-              Air Quality Index :
+              Pollution Index :
               {' '}
               {item.main.aqi}
               {' '}
               {' '}
               <br />
-              Category :
+              Air Quality :
               {' '}
               {airQualityIndex[item.main.aqi - 1]}
               <div className="pollutants">
-                <h3>Pollutants Details:</h3>
+                <h3>Pollutant concentration in μg/m3:</h3>
                 <ul className="pollutants-list">
                   {Object.keys(item.components).map((key) => (
                     <li key={key}>{`${(key).toUpperCase()} : ${item.components[key]}`}</li>

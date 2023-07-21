@@ -29,7 +29,7 @@ function GeoLocation() {
           AirIdX
         </div>
         <div className="search">
-          <input type="search" name="search" id="search" placeholder="search cities for air index..." />
+          <input type="search" placeholder="search cities for air index..." />
         </div>
         <div>
           <BsFillMicFill className="react-icon" />
