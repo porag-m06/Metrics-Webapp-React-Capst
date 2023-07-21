@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../style/geolocations.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -10,12 +10,16 @@ import { fetchGeoLocations } from '../redux/features/geolocations/geolocationSli
 
 function GeoLocation() {
   const { locations, isLoading, error } = useSelector((storeState) => storeState.geolocation);
+  const [query, setQuery] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     if (locations.length === 0) { dispatch(fetchGeoLocations()); }
   }, [locations, dispatch]);
+
+  const filteredLocations = locations.filter((location) => location.name.toLowerCase()
+    .includes(query.toLowerCase()));
 
   if (isLoading) { return (<div>geoLocations data is loading...</div>); }
   if (error) { return (<div>Something went wrong...!</div>); }
@@ -29,7 +33,14 @@ function GeoLocation() {
           AirIdX
         </div>
         <div className="search">
-          <input type="search" placeholder="search cities for air index..." />
+          <input
+            type="search"
+            value={query}
+            onChange={
+            (e) => setQuery(e.target.value)
+          }
+            placeholder="search cities by name for air index..."
+          />
         </div>
         <div>
           <BsFillMicFill className="react-icon" />
@@ -49,7 +60,7 @@ function GeoLocation() {
         </div>
         <p className="middle">STATS BY CITIES</p>
         <ul className="ulist">
-          {locations.map((location) => (
+          {filteredLocations.map((location) => (
             <li key={location.id}>
               <button
                 type="button"
