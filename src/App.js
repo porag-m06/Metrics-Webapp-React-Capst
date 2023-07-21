@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Nav from './components/Nav';
 import GeoLocation from './components/GeoLocation';
+import PullutionDetail from './components/PollutionDetail';
 
 function App() {
   return (
@@ -9,8 +10,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<GeoLocation />} />
-          {/* <Route path="/details" element={<Missions />} />
-          <Route path="/about" element={<Profile />} /> */}
+          <Route path="/city-pollution-info" element={<PullutionDetail />} />
         </Routes>
       </div>
     </div>

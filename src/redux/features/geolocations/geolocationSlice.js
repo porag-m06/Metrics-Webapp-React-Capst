@@ -1,20 +1,24 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const geoURLwithOffset = 'http://geodb-free-service.wirefreethought.com/v1/geo/places?offset=0&limit=10&offset=0&types=CITY&minPopulation=7000000&sort=name';
-
 export const fetchGeoLocations = createAsyncThunk(
-  'missions/fetchGeoLocations',
+  'locations/fetchGeoLocations',
   async () => {
     try {
-      const response = await axios.get(geoURLwithOffset);
-      console.log('GEO', response.data.data);
-      return response.data.data;
+      const promises = [];
+      for (let i = 0; i < 90; i += 10) {
+        const promise = axios.get(`http://geodb-free-service.wirefreethought.com/v1/geo/places?limit=10&offset=${i}&types=CITY&minPopulation=7000000&sort=name`);
+        promises.push(promise);
+      }
+      const responses = await Promise.all(promises);
+      const responseData = responses.flatMap((response) => response.data.data);
+      return responseData;
     } catch (error) {
       return error;
     }
   },
 );
+
 const initialState = {
   locations: [],
   isLoading: false,
