@@ -1,5 +1,5 @@
 .hero {
-  height: 25vh;
+  height: 28vh;
   background-color: var(--hero-banner);
   display: flex;
   z-index: 1;
