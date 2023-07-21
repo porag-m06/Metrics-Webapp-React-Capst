@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import '../style/geolocations.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { fetchGeoLocations } from '../redux/features/geolocations/geolocationSlice';
+import worldmap from '../assets/worldmap.png';
 
 function GeoLocation() {
   const { locations, isLoading, error } = useSelector((storeState) => storeState.geolocation);
@@ -17,7 +19,16 @@ function GeoLocation() {
 
   return (
     <div>
-      GEOLOCATIONS :
+      <div className="hero">
+        <img src={worldmap} alt="worldmap" />
+        <div className="hero-right">
+          <div className="herotext">
+            <h2>POLLUTION INDEX</h2>
+            <p>82 major cities</p>
+          </div>
+        </div>
+      </div>
+      <p>STATS BY CITIES</p>
       <ul>
         {locations.map((location) => (
           <li key={location.id}>

@@ -1,0 +1,22 @@
+.hero {
+  height: 30vh;
+  background-color: var(--hero-banner);
+  display: flex;
+  z-index: 1;
+  position: relative;
+}
+
+.hero img {
+  width: 100vw;
+  z-index: 2;
+}
+
+.hero-right {
+  width: 50vw;
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: var(--hero-banner);
+  position: absolute;
+  z-index: 3;
+}

@@ -3,7 +3,6 @@ import '../style/nav.css';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BsFillMicFill } from 'react-icons/bs';
 import { RiSettings5Fill } from 'react-icons/ri';
-// import userImg from '../assets/planet.png'; BsMic
 
 function Nav() {
   return (

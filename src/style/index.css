@@ -6,13 +6,14 @@
   --detail-border-top: #35548b;
   --bg-n-left-card: #4066ae;
   --right-card: #3f62a4;
-  --font-color: #fefefd;
+  --font-color: #ffff5b;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--font-color);
   background-color: var(--bg-n-left-card);
   font-family: 'Josefin Sans', 'Lato', sans-serif;
 }
