@@ -1,21 +1,24 @@
 import React from 'react';
 import '../style/nav.css';
-import { NavLink } from 'react-router-dom';
-// import userImg from '../assets/planet.png';
+import { IoIosArrowBack } from 'react-icons/io';
+import { BsFillMicFill } from 'react-icons/bs';
+import { RiSettings5Fill } from 'react-icons/ri';
+// import userImg from '../assets/planet.png'; BsMic
 
 function Nav() {
   return (
-    <header className="nav-head">
-      <div className="false-nav">
-        <div className="nav">
-          <div className="logo">
-            {/* <img src={userImg} alt="logo" /> */}
-            <h2>Metrices Webapp</h2>
-          </div>
-          <ul className="nav-items">
-            <li className="nav-link"><NavLink to="/">Locations</NavLink></li>
-          </ul>
-        </div>
+    <header className="nav-container">
+      <div className="logo">
+        <IoIosArrowBack />
+        {' '}
+        AirIdX
+      </div>
+      <div className="search">
+        <input type="search" name="search" id="search" placeholder="search cities for air index..." />
+      </div>
+      <div>
+        <BsFillMicFill className="react-icon" />
+        <RiSettings5Fill className="react-icon" />
       </div>
     </header>
   );
