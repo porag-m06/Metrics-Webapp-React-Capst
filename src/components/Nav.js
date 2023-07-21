@@ -14,9 +14,6 @@ function Nav() {
           </div>
           <ul className="nav-items">
             <li className="nav-link"><NavLink to="/">Locations</NavLink></li>
-            {/* <li className="nav-link"><NavLink to="/missions">Missions</NavLink></li>
-            <span>|</span>
-            <li className="nav-link"><NavLink to="/profile">My Profile</NavLink></li> */}
           </ul>
         </div>
       </div>
