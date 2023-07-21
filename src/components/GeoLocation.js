@@ -18,18 +18,18 @@ function GeoLocation() {
   if (error) { return (<div>Something went wrong...!</div>); }
 
   return (
-    <div>
+    <div className="home-container">
       <div className="hero">
         <img src={worldmap} alt="worldmap" />
         <div className="hero-right">
-          <div className="herotext">
+          <div>
             <h2>POLLUTION INDEX</h2>
             <p>82 major cities</p>
           </div>
         </div>
       </div>
-      <p>STATS BY CITIES</p>
-      <ul>
+      <p className="middle">STATS BY CITIES</p>
+      <ul className="ulist">
         {locations.map((location) => (
           <li key={location.id}>
             <button
@@ -39,10 +39,11 @@ function GeoLocation() {
               }}
             >
               <div className="card">
-                <h2>{location.name}</h2>
-                <h5>{location.country}</h5>
-                <p>{`Latitude: ${location.latitude}\nLongitude: ${location.longitude}`}</p>
-                <h3>{`Population: ${location.population / 100000} Millions`}</h3>
+                <h3>{(location.name).toUpperCase()}</h3>
+                <h5>{(location.country).toUpperCase()}</h5>
+                <h6>{`Latitude: ${(location.latitude).toFixed(2)}`}</h6>
+                <h6>{`Longitude: ${(location.longitude).toFixed(2)}`}</h6>
+                <h4>{`Population: ${(location.population / 1000000).toFixed(2)} M`}</h4>
               </div>
             </button>
           </li>
