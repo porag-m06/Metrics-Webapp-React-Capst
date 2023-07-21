@@ -1,0 +1,42 @@
+.detail-container {
+    background-color: var(--hero-banner);
+    min-height: 90vh;
+    padding: 5px;
+}
+
+.detail-container h2 {
+    margin: 0.8rem 0;
+    padding-left: 0.8rem;
+}
+
+.detail-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.back-btn {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search span {
+    width: 55vw;
+    font-size: 1rem;
+}
+
+.index-list {
+    padding-left: 2rem !important;
+}
+
+.pollutants {
+    background-color: var(--right-card);
+    margin: 1rem 2rem 0 0;
+    padding: 1rem 1rem;
+}
+
+.pollutants h3 {
+    margin-top: 0;
+}

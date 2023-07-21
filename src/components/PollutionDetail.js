@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react';
+import '../style/pollutionDetail.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { IoIosArrowBack } from 'react-icons/io';
+import { BsFillMicFill } from 'react-icons/bs';
+import { RiSettings5Fill } from 'react-icons/ri';
 import { fetchPollutionData } from '../redux/features/pollutionDetails/pollutionDetailsSlice';
 
 function PollutionDetail() {
+  const navigate = useNavigate();
   const location = useLocation();
   const { name, latitude, longitude } = location.state.location;
 
@@ -19,23 +24,60 @@ function PollutionDetail() {
   if (error) { return (<div>Something went wrong...!</div>); }
 
   return (
-    <div>
-      <h2>
-        Pollution Detail of:
-        {name}
-      </h2>
-      <ul>
-        {list.map((item) => (
-          <li key={1}>
-            Air Quality Index is :
-            {item.main.aqi}
-            {' '}
-            or,
-            {airQualityIndex[item.main.aqi - 1]}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <header className="nav-container">
+        <div className="logo">
+          <button
+            className="back-btn"
+            type="button"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <IoIosArrowBack className="react-icon" />
+            .
+          </button>
+        </div>
+        <div className="search">
+          <span>air pollution index view</span>
+        </div>
+        <div>
+          <BsFillMicFill className="react-icon" />
+          <RiSettings5Fill className="react-icon" />
+        </div>
+      </header>
+
+      <div className="detail-container">
+        <h2>
+          City :
+          {' '}
+          {name}
+        </h2>
+        <ul>
+          {list.map((item) => (
+            <li className="index-list" key={1}>
+              Air Quality Index :
+              {' '}
+              {item.main.aqi}
+              {' '}
+              {' '}
+              <br />
+              Category :
+              {' '}
+              {airQualityIndex[item.main.aqi - 1]}
+              <div className="pollutants">
+                <h3>Pollutants Details:</h3>
+                <ul className="pollutants-list">
+                  {Object.keys(item.components).map((key) => (
+                    <li key={key}>{`${(key).toUpperCase()} : ${item.components[key]}`}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
