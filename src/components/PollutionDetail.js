@@ -8,19 +8,20 @@ import { RiSettings5Fill } from 'react-icons/ri';
 import { fetchPollutionData } from '../redux/features/pollutionDetails/pollutionDetailsSlice';
 
 function PollutionDetail() {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { name, latitude, longitude } = location.state.location;
+  const { list, isLoading, error } = useSelector((storeState) => storeState.airpollution);
 
+  const location = useLocation();
+  const { name, latitude, longitude } = location.state?.location || {};
+
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchPollutionData({ latitude, longitude }));
   }, []);
 
-  const { list, isLoading, error } = useSelector((storeState) => storeState.airpollution);
   const airQualityIndex = ['Good', 'Fair', 'Moderate', 'Poor', 'Very Poor'];
 
-  if (isLoading) { return (<div>geoLocations data is loading...</div>); }
+  if (isLoading) { return (<div>airpollution data is loading...</div>); }
   if (error) { return (<div>Something went wrong...!</div>); }
 
   return (
