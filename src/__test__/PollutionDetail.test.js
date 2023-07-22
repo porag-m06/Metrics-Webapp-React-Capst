@@ -23,7 +23,7 @@ describe('PollutionDetail component', () => {
     });
   });
 
-  test('renders loading message when data is being fetched', () => {
+  test('POLLUTIONDETAILS TEST 1: renders loading message when data is being fetched', () => {
     store = mockStore({
       airpollution: {
         list: [],
@@ -42,4 +42,25 @@ describe('PollutionDetail component', () => {
 
     expect(screen.getByText('airpollution data is loading...')).toBeInTheDocument();
   });
+
+  test('POLLUTIONDETAILS TEST 2: renders error message when data fetch fails', () => {
+    store = mockStore({
+      airpollution: {
+        list: [],
+        isLoading: false,
+        error: 'Something went wrong',
+      },
+    });
+
+    render(
+      <Provider store={store}>
+        <BrowserRouter>
+          <PollutionDetail />
+        </BrowserRouter>
+      </Provider>,
+    );
+
+    expect(screen.getByText('Something went wrong...!')).toBeInTheDocument();
+  });
+
 });

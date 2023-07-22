@@ -138,7 +138,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Please follow the link for a live demo.
-- [The matrices webapp: Coming Soon...](https://github.com/porag-m06/Metrics-Webapp-React-Capst)
+- [The matrices webapp:](https://porag-m06.github.io/Metrics-Webapp-React-Capst/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
