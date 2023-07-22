@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Metrics-Webapp-React-Capst/static/css/main.2e49beb9.css",
+    "main.js": "/Metrics-Webapp-React-Capst/static/js/main.e1ee7ada.js",
+    "static/media/worldmap.png": "/Metrics-Webapp-React-Capst/static/media/worldmap.85722e58538b37f4c2fc.png",
+    "index.html": "/Metrics-Webapp-React-Capst/index.html",
+    "main.2e49beb9.css.map": "/Metrics-Webapp-React-Capst/static/css/main.2e49beb9.css.map",
+    "main.e1ee7ada.js.map": "/Metrics-Webapp-React-Capst/static/js/main.e1ee7ada.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e49beb9.css",
+    "static/js/main.e1ee7ada.js"
+  ]
+}
