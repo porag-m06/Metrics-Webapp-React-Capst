@@ -139,7 +139,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 > Please follow the link for a video & live demo.
 - [Video Presentation:](https://www.loom.com/share/c59cff2aaf524bc2989f29c857c7b3c5?sid=1172c318-b745-4211-a048-7575dce85e8e)
-- [The matrices webapp:](https://air-pollution-index.onrender.com/)
+- [The matrices webapp:](https://air-index.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
