@@ -6,13 +6,44 @@
   --detail-border-top: #35548b;
   --bg-n-left-card: #4066ae;
   --right-card: #3f62a4;
-  --font-color: #fefefd;
+  --font-color: white;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--font-color);
   background-color: var(--bg-n-left-card);
   font-family: 'Josefin Sans', 'Lato', sans-serif;
+}
+
+.nav-container {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.react-icon {
+  background: none;
+  padding: 0 0.5rem 0 0.8rem;
+}
+
+.react-icon path {
+  fill: white;
+}
+
+.search input {
+  margin: 0;
+  width: 55vw;
+  height: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  padding-left: 0.8rem;
+  background-color: var(--hero-banner);
+}
+
+.search input::placeholder {
+  color: var(--font-color);
 }

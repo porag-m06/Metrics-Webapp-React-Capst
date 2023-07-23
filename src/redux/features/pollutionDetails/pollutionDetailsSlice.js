@@ -6,7 +6,7 @@ export const fetchPollutionData = createAsyncThunk(
   async (latlong) => {
     try {
       const { latitude, longitude } = latlong;
-      const response = await axios.get(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=c8dceae3958b15e8f8e38d827f810487`);
+      const response = await axios.get(`//api.openweathermap.org/data/2.5/air_pollution?lat=${latitude}&lon=${longitude}&appid=c8dceae3958b15e8f8e38d827f810487`);
       return response.data.list;
     } catch (error) {
       return error;
