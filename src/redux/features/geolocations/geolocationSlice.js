@@ -13,7 +13,6 @@ export const fetchGeoLocations = createAsyncThunk(
           'X-Api-Key': apiKey,
         },
       });
-      console.log(response);
       return response.data;
     } catch (error) {
       return error;
