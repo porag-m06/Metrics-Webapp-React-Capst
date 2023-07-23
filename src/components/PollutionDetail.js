@@ -3,7 +3,7 @@ import '../style/pollutionDetail.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { IoIosArrowBack } from 'react-icons/io';
-import { BsFillMicFill } from 'react-icons/bs';
+import { BsFillMicFill, BsArrowRightCircle } from 'react-icons/bs';
 import { RiSettings5Fill } from 'react-icons/ri';
 import { fetchPollutionData } from '../redux/features/pollutionDetails/pollutionDetailsSlice';
 
@@ -50,27 +50,45 @@ function PollutionDetail() {
 
       <div className="detail-container">
         <h2>
-          City :
+          City of
+          {' '}
+          <br />
           {' '}
           {name}
         </h2>
-        <ul>
+        <ul className="dc-ul">
           {list.map((item) => (
             <li className="index-list" key={1}>
-              Pollution Index :
-              {' '}
-              {item.main.aqi}
-              {' '}
-              {' '}
-              <br />
-              Air Quality :
-              {' '}
-              {airQualityIndex[item.main.aqi - 1]}
+              <p>
+                {' '}
+                Pollution Index :
+                {' '}
+                {item.main.aqi}
+              </p>
+              <p>
+                {' '}
+                Air Quality :
+                {' '}
+                {airQualityIndex[item.main.aqi - 1]}
+              </p>
+
               <div className="pollutants">
-                <h3>Pollutant concentration in μg/m3:</h3>
+                <p>Pollutant concentration in μg/m3:</p>
                 <ul className="pollutants-list">
                   {Object.keys(item.components).map((key) => (
-                    <li key={key}>{`${(key).toUpperCase()} : ${item.components[key]}`}</li>
+                    <li key={key}>
+                      <p>
+                        {' '}
+                        {`${(key).toUpperCase()}`}
+                        {' '}
+                      </p>
+                      <p>
+                        {' '}
+                        {`${item.components[key]}`}
+                        {' '}
+                        <BsArrowRightCircle className="react-icon" />
+                      </p>
+                    </li>
                   ))}
                 </ul>
               </div>
