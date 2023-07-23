@@ -54,7 +54,7 @@ function GeoLocation() {
           <div className="hero-right">
             <div>
               <h2>POLLUTION INDEX</h2>
-              <p>82 major cities</p>
+              <p>major cities</p>
             </div>
           </div>
         </div>

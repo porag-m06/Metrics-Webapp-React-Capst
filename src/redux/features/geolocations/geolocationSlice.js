@@ -1,18 +1,20 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const apiNijaCityUrl = 'https://api.api-ninjas.com/v1/city?min_population=5000000&limit=30';
+const apiKey = '/YeVAlnqFdBB70E8aGovGA==fjN5mk2cXRLs5vHK';
+
 export const fetchGeoLocations = createAsyncThunk(
   'locations/fetchGeoLocations',
   async () => {
     try {
-      const promises = [];
-      for (let i = 0; i < 90; i += 10) {
-        const promise = axios.get(`http://geodb-free-service.wirefreethought.com/v1/geo/places?limit=10&offset=${i}&types=CITY&minPopulation=7000000&sort=name`);
-        promises.push(promise);
-      }
-      const responses = await Promise.all(promises);
-      const responseData = responses.flatMap((response) => response.data.data);
-      return responseData;
+      const response = await axios.get(apiNijaCityUrl, {
+        headers: {
+          'X-Api-Key': apiKey,
+        },
+      });
+      console.log(response);
+      return response.data;
     } catch (error) {
       return error;
     }
@@ -46,5 +48,4 @@ export const geolocationSlice = createSlice({
 
 });
 
-// export const { reserveMission, leaveMission } = missionsSlice.actions;
 export default geolocationSlice.reducer;
