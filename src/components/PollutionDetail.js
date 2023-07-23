@@ -79,12 +79,12 @@ function PollutionDetail() {
                     <li key={key}>
                       <p>
                         {' '}
-                        {`${(key).toUpperCase()}`}
+                        {(key).toUpperCase()}
                         {' '}
                       </p>
                       <p>
                         {' '}
-                        {`${item.components[key]}`}
+                        {item.components[key]}
                         {' '}
                         <BsArrowRightCircle className="react-icon" />
                       </p>
